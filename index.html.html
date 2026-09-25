@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Lvanya ❤️</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Georgia,"Times New Roman",serif;
+    color:#4b2032;
+    background:#fff7fa;
+    overflow-x:hidden;
+  }
+  body:before{
+    content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
+    background-image:radial-gradient(#e9a6bc 1px,transparent 1px);
+    background-size:22px 22px;z-index:-2;
+  }
+  .hero{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:40px 20px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#fff0f5,#ffe0eb 45%,#fff8fb);
+  }
+  .hero-card{
+    max-width:850px;padding:50px 30px;border-radius:32px;
+    background:rgba(255,255,255,.7);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.9);box-shadow:0 20px 60px rgba(135,44,82,.15);
+    animation:rise 1s ease both;
+  }
+  .eyebrow{font:700 14px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#a43b64}
+  h1{font-size:clamp(52px,11vw,110px);line-height:.95;margin:18px 0;color:#8d294f}
+  .nickname{font-size:clamp(22px,4vw,34px);font-style:italic}
+  .from{margin-top:28px;font-size:19px;line-height:1.7}
+  .btn{
+    display:inline-block;margin-top:30px;padding:14px 24px;border-radius:999px;
+    text-decoration:none;background:#9d3158;color:white;font:bold 15px Arial,sans-serif;
+    box-shadow:0 10px 25px rgba(157,49,88,.25);transition:.25s;
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(157,49,88,.32)}
+  section{padding:90px 20px;max-width:1000px;margin:auto}
+  .section-title{text-align:center;font-size:42px;color:#8d294f;margin-bottom:16px}
+  .section-sub{text-align:center;font:16px Arial,sans-serif;color:#805466;margin-bottom:42px}
+  .message{
+    max-width:760px;margin:auto;background:white;border-radius:28px;padding:42px;
+    box-shadow:0 15px 50px rgba(135,44,82,.10);text-align:center;
+    font-size:23px;line-height:1.8;
+  }
+  .signature{margin-top:25px;font-size:19px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .reason{
+    background:white;padding:28px;border-radius:24px;text-align:center;
+    box-shadow:0 12px 35px rgba(135,44,82,.09);transition:.25s;
+  }
+  .reason:hover{transform:translateY(-6px)}
+  .emoji{font-size:38px;margin-bottom:12px}
+  .reason h3{margin-bottom:9px;color:#8d294f;font-size:21px}
+  .reason p{font:15px/1.6 Arial,sans-serif;color:#775263}
+  .certificate{
+    background:#fff;border:2px dashed #d98ba8;border-radius:30px;padding:42px;text-align:center;
+    box-shadow:0 15px 45px rgba(135,44,82,.08);
+  }
+  .certificate .seal{font-size:62px}
+  .certificate h3{font-size:34px;color:#8d294f;margin:15px 0}
+  .certificate p{font:16px/1.7 Arial,sans-serif;color:#775263}
+  .surprise{text-align:center}
+  #secret{
+    display:none;margin:30px auto 0;max-width:700px;background:#fff;
+    padding:35px;border-radius:28px;box-shadow:0 15px 50px rgba(135,44,82,.12);
+    animation:pop .5s ease both;
+  }
+  #secret.show{display:block}
+  #secret h3{font-size:32px;color:#8d294f;margin-bottom:15px}
+  #secret p{font-size:21px;line-height:1.8}
+  footer{
+    text-align:center;padding:55px 20px;background:#8d294f;color:#fff0f5;
+    font:15px/1.7 Arial,sans-serif;
+  }
+  footer strong{font-family:Georgia,serif;font-size:22px}
+  .floating{position:absolute;inset:0;pointer-events:none}
+  .heart{position:absolute;font-size:24px;opacity:.7;animation:float 7s linear infinite}
+  .heart:nth-child(1){left:8%;top:80%;animation-delay:0s}.heart:nth-child(2){left:20%;top:20%;animation-delay:1.5s}
+  .heart:nth-child(3){left:75%;top:75%;animation-delay:3s}.heart:nth-child(4){left:88%;top:25%;animation-delay:2s}
+  .heart:nth-child(5){left:52%;top:88%;animation-delay:4s}
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:20}
+  .confetti-piece{position:absolute;width:9px;height:14px;top:-20px;animation:fall 2.8s linear forwards}
+  .countdown{
+    margin-top:28px;font:700 14px Arial,sans-serif;letter-spacing:1px;color:#8d294f
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+  @keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+  @keyframes float{0%{transform:translateY(30px) rotate(0);opacity:0}15%{opacity:.7}100%{transform:translateY(-120vh) rotate(360deg);opacity:0}}
+  @keyframes fall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:0}}
+  @media(max-width:600px){
+    .hero-card{padding:38px 20px}.message{padding:28px 22px;font-size:20px}
+    section{padding:70px 16px}.section-title{font-size:34px}
+  }
+
+  #lockScreen{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;background:linear-gradient(135deg,#fff0f5,#ffe0eb);}
+  #lockScreen .lock-card{max-width:650px;background:rgba(255,255,255,.9);padding:45px 28px;border-radius:30px;box-shadow:0 20px 60px rgba(135,44,82,.2);}
+  #lockScreen h2{font-size:clamp(34px,7vw,58px);color:#8d294f;margin-bottom:18px}
+  #lockScreen p{font:18px/1.7 Arial,sans-serif;color:#775263}
+  #lockCountdown{margin-top:20px;font:bold 16px Arial,sans-serif;color:#9d3158}
+</style>
+</head>
+<body><div id="lockScreen">
+  <div class="lock-card">
+    <div style="font-size:60px">🔒❤️</div>
+    <h2>Not Yet… 👀</h2>
+    <p>This little surprise is locked until <strong>20 October 2026</strong>.<br>Come back on that day to open it! 🎂✨</p>
+    <div id="lockCountdown">Counting down...</div>
+    <div style="margin-top:25px">
+      <input id="unlockCode" type="password" placeholder="Enter unlock code"
+        autocomplete="off"
+        style="width:min(100%,360px);padding:14px 18px;border:2px solid #e9b1c5;border-radius:999px;font-size:16px;outline:none;text-align:center;">
+      <button id="unlockBtn" type="button" class="btn"
+        style="border:0;cursor:pointer;margin-left:6px;">🔓 Unlock</button>
+      <div id="unlockMessage" style="margin-top:12px;font:14px Arial,sans-serif;color:#a43b64;min-height:20px;"></div>
+    </div>
+  </div>
+</div>
+
+<div id="confetti"></div>
+
+<header class="hero">
+  <div class="floating" aria-hidden="true">
+    <div class="heart">❤️</div><div class="heart">💗</div><div class="heart">💕</div>
+    <div class="heart">💖</div><div class="heart">❤️</div>
+  </div>
+  <div class="hero-card">
+    <div class="eyebrow">20 October 2026 • A very special day</div>
+    <h1>Happy Birthday,<br>Lvanya ❤️</h1>
+    <div class="nickname">aka “Chatpati Gupchup” 🌶️</div>
+    <p class="from">From your very own <strong>Moti Chur ka Laddu</strong> 🍬</p>
+    <div class="countdown" id="countdown">Counting down to your special day...</div>
+    <a class="btn" href="#message">Open Your Birthday Surprise ↓</a>
+  </div>
+</header>
+
+<main>
+  <section id="message">
+    <h2 class="section-title">A Little Something For You 💌</h2>
+    <p class="section-sub">Written by Advik, with an unreasonable amount of love.</p>
+    <div class="message">
+      <p>My dearest Lvanya,</p>
+      <p>I really love you, and I’ll always be with you. ❤️</p>
+      <p>You make ordinary days feel special, and somehow you manage to be both incredibly cute and completely <em>Chatpati Gupchup</em> at the same time. 😂</p>
+      <p>On your birthday, I just want you to know how special you are to me. Keep smiling, keep being your wonderfully crazy self, and never forget that your Moti Chur ka Laddu is cheering for you. 🍬❤️</p>
+      <div class="signature">— Advik</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Why You're My Favorite Human 😌</h2>
+    <p class="section-sub">A completely scientific investigation. Probably.</p>
+    <div class="grid">
+      <div class="reason"><div class="emoji">❤️</div><h3>Your Heart</h3><p>You have a way of making people around you feel cared for and appreciated.</p></div>
+      <div class="reason"><div class="emoji">😂</div><h3>Your Chatpata-ness</h3><p>Life would be suspiciously boring without your unique brand of chaos.</p></div>
+      <div class="reason"><div class="emoji">✨</div><h3>Your Smile</h3><p>One smile from you and suddenly everything feels a little brighter.</p></div>
+      <div class="reason"><div class="emoji">🫶</div><h3>Just You</h3><p>No complicated explanation. You're simply someone very special to me.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="certificate">
+      <div class="seal">🏆</div>
+      <h3>Official Birthday Certificate</h3>
+      <p>This certifies that</p>
+      <h2 style="margin:10px 0 16px;color:#9d3158">Lvanya “Chatpati Gupchup”</h2>
+      <p>has successfully completed another year of being cute, funny, slightly dangerous to innocent snacks, and absolutely unforgettable.</p>
+      <p style="margin-top:16px"><strong>Issued by:</strong> Advik “Moti Chur ka Laddu” 🍬</p>
+    </div>
+  </section>
+
+  <section class="surprise">
+    <h2 class="section-title">One Last Surprise 🎁</h2>
+    <p class="section-sub">Okay, okay… click the button. I know you're curious.</p>
+    <button class="btn" id="surpriseBtn" type="button">Do Not Click 😏</button>
+    <div id="secret">
+      <h3>Plot twist! 💖</h3>
+      <p>I AM ALWAYS WITHHH YOUUU ANY TIME ANY WHERE ❤️</p>
+      <p>ANYTIME BORED JUSTT TEXT ALWYSSS THERE FOR YOU 🫶</p>
+      <p>LEST 30 FEB COMES 😂❤️</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>Lvanya ❤️ Advik</strong><br>
+  Made with love, laughter, and a little bit of Chatpati Gupchup energy. 🌶️
+</footer>
+
+<script>
+  // Birthday countdown: 20 October 2026, local browser time
+  const target = new Date("2026-10-20T00:00:00");
+  const countdown = document.getElementById("countdown");
+
+  function updateCountdown(){
+    const now = new Date();
+    const diff = target - now;
+    if(diff <= 0){
+      countdown.textContent = "🎉 It's your birthday! Happy Birthday, Lvanya! 🎂❤️";
+      return;
+    }
+    const days = Math.floor(diff/86400000);
+    const hours = Math.floor((diff%86400000)/3600000);
+    const mins = Math.floor((diff%3600000)/60000);
+    const secs = Math.floor((diff%60000)/1000);
+    countdown.textContent = `${days} days • ${hours} hours • ${mins} minutes • ${secs} seconds until your birthday 🎂`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown,1000);
+
+  // Lock the whole website until 20 October 2026.
+  const lockScreen = document.getElementById("lockScreen");
+  const lockCountdown = document.getElementById("lockCountdown");
+  const UNLOCK_CODE = "2021784596GAMA";
+  let unlockedByCode = false;
+
+  function updateLock(){
+    const now = new Date();
+    const diff = target - now;
+    if(diff <= 0 || unlockedByCode){
+      lockScreen.style.display = "none";
+      return;
+    }
+    const days = Math.floor(diff/86400000);
+    const hours = Math.floor((diff%86400000)/3600000);
+    const mins = Math.floor((diff%3600000)/60000);
+    const secs = Math.floor((diff%60000)/1000);
+    lockCountdown.textContent = `${days} days • ${hours} hours • ${mins} minutes • ${secs} seconds remaining`;
+  }
+
+  document.getElementById("unlockBtn").addEventListener("click", () => {
+    const entered = document.getElementById("unlockCode").value.trim();
+    const message = document.getElementById("unlockMessage");
+
+    if(entered === UNLOCK_CODE){
+      unlockedByCode = true;
+      lockScreen.style.display = "none";
+      message.textContent = "";
+    } else {
+      message.textContent = "❌ Wrong code. Try again.";
+      document.getElementById("unlockCode").select();
+    }
+  });
+
+  document.getElementById("unlockCode").addEventListener("keydown", (e) => {
+    if(e.key === "Enter") document.getElementById("unlockBtn").click();
+  });
+
+  updateLock();
+  setInterval(updateLock,1000);
+
+  const secret = document.getElementById("secret");
+  document.getElementById("surpriseBtn").addEventListener("click", () => {
+    secret.classList.add("show");
+    launchConfetti(100);
+    document.getElementById("surpriseBtn").textContent = "💖 Surprise Unlocked!";
+    document.getElementById("surpriseBtn").disabled = true;
+    document.getElementById("surpriseBtn").style.opacity = ".75";
+  });
+
+  function launchConfetti(count){
+    const box = document.getElementById("confetti");
+    for(let i=0;i<count;i++){
+      const p=document.createElement("span");
+      p.className="confetti-piece";
+      p.style.left=Math.random()*100+"vw";
+      p.style.setProperty("--x",(Math.random()*240-120)+"px");
+      p.style.animationDelay=(Math.random()*.5)+"s";
+      p.style.background=["#9d3158","#e89ab6","#f6c65b","#8fc8c0","#9a8fd3"][Math.floor(Math.random()*5)];
+      p.style.transform=`rotate(${Math.random()*360}deg)`;
+      box.appendChild(p);
+      setTimeout(()=>p.remove(),3500);
+    }
+  }
+
+  // Small birthday-page celebration when the page opens on/after the birthday.
+  if(new Date() >= target) setTimeout(()=>launchConfetti(70),500);
+</script>
+</body>
+</html>
